@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import Modal from "./Modal"
 import "./style.css"
 import axios from 'axios'
 
@@ -22,7 +22,9 @@ useEffect(()=>{
 
 },[])
   
-  console.log(dados);
+ 
+
+
   
 
   return (
@@ -36,13 +38,14 @@ useEffect(()=>{
                 <th>E-mail</th>
                 <th>Cliente</th>
                 <th>Perfil de Acesso</th>
-                <th>...</th>
+                <th></th>
+                <Modal></Modal>
               </tr>
             </thead>
               {dados.map((val,key)=>{
                 return <tr key={key}>
                   
-                    <td>
+                    <td className={hidden}>
                     {val.name} 
                     </td>
                     <td>
